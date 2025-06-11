@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tela de Bloqueio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .lock-screen::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .lock-screen {
+      background-image: url('images/windows11-wallpaper.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100vw;
+      height: 100vh;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Relógio e data no canto inferior esquerdo */
+    .lock-bottom-left {
+      position: absolute;
+      bottom: 25px;
+      left: 20px;
+      text-align: left;
+      z-index: 2;
+    }
+
+    .lock-time {
+      font-size: 5.5rem;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .lock-date {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-top: 5px;
+    }
+
+   .lock-bottom-right {
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+}
+
+.lock-bottom-right .icon {
+  width: 16px; /* Tamanho personalizado */
+  height: 16px; /* Tamanho personalizado */
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
+.lock-bottom-right .fa-solid {
+  font-size: 16px; 
+}
+
+
+  </style>
+</head>
+<body class="lock-screen">
+  <div class="lock-bottom-left">
+    <div class="lock-time">11:34</div>
+    <div class="lock-date">terça-feira, 25 de agosto</div>
+  </div>
+
+  <div class="lock-bottom-right">
+    <img src="images/sinal-wi-fi.png" alt="Wi-Fi" class="icon wifi-icon" />
+    <i class="fa-solid fa-battery-three-quarters" title="Bateria"></i>
+  </div>
+</body>
+</html>

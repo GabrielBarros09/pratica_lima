@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Windows 11</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/windows11-wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+    }
+    
+    /* Efeito de desfoque no plano de fundo */
+    .blur-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/windows11-wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(10px);
+      transform: scale(1.05);
+      z-index: -1;
+    }
+    
+    /* Container de login no estilo Windows 11 */
+    .login-container {
+      width: 380px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      text-align: center;
+    }
+    
+    /* Avatar do usuário */
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Nome do usuário */
+    .user-name {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    
+    /* Campo de senha */
+    .password-field {
+      width: 100%;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+    
+    .password-field:focus {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.5);
+    }
+    
+    .password-field::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Botão de entrar */
+    .login-button {
+      width: 100%;
+      padding: 15px;
+      background: rgba(0, 120, 215, 0.8);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .login-button:hover {
+      background: rgba(0, 120, 215, 1);
+    }
+    
+    /* Dica visual */
+    .hint-text {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Efeito de desfoque no plano de fundo -->
+  <div class="blur-overlay"></div>
+  
+  <!-- Container de login -->
+  <div class="login-container">
+    <div class="user-avatar">
+      <i class="fas fa-user"></i>
+    </div>
+    
+    <div class="user-name">Usuário</div>
+    
+    <input type="password" class="password-field" placeholder="Senha">
+    
+    <button class="login-button">Entrar</button>
+    
+    <div class="hint-text">
+      <i class="fas fa-arrow-right"></i> Pressione Enter para continuar
+    </div>
+  </div>
+</body>
+</html>
