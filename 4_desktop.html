@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Área de Trabalho</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-image: url('https://i.redd.it/5bwxtq07ny571.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .desktop-icons {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .desktop-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80px;
+      padding: 6px;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .desktop-icon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .desktop-icon img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 6px;
+    }
+
+    .desktop-icon span {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .taskbar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .taskbar-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      height: 100%;
+    }
+
+    .taskbar-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .taskbar-icon img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .taskbar-icon:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .taskbar-right {
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .taskbar-right img {
+      height: 36px; /* AUMENTADO AQUI */
+    }
+
+    .time-date {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.75rem;
+      color: #222;
+      text-align: right;
+      line-height: 1;
+    }
+
+    .taskbar-right img {
+    width: 100px;
+    height: auto; 
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="desktop-icons">
+    <div class="desktop-icon">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/pt/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/2048px-Microsoft_Edge_logo_%282019%29.svg.png"
+        alt="Edge" />
+      <span>Edge</span>
+    </div>
+
+    <div class="desktop-icon">
+      <img src="https://i.ibb.co/nzSLJzc/image.png" alt="Explorador" />
+      <span>Explorador</span>
+    </div>
+
+    <div class="desktop-icon">
+      <img
+        src="https://camo.githubusercontent.com/a0d0ba8fa841330130c8662f2aa0ceda2d1d69e492a0c94e4c8a1f40d4658f81/68747470733a2f2f636f64652e76697375616c73747564696f2e636f6d2f6173736574732f757064617465732f315f33352f6c6f676f2d737461626c652e706e67"
+        alt="VSCode" />
+      <span>VS Code</span>
+    </div>
+
+    <div class="desktop-icon">
+      <img src="https://cdn.worldvectorlogo.com/logos/microsoft-store-2022.svg" alt="Microsoft Store">
+      <span>Microsoft Store</span>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <div class="taskbar-center">
+      <div class="taskbar-icon">
+        <img src="https://img.icons8.com/?size=512&id=TuXN3JNUBGOT&format=png" alt="Iniciar" />
+      </div>
+
+      <div class="taskbar-icon">
+        <img src="https://i.ibb.co/nzSLJzc/image.png" alt="Explorer" />
+      </div>
+
+      <div class="taskbar-icon">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/pt/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/2048px-Microsoft_Edge_logo_%282019%29.svg.png"
+          alt="Edge" />
+      </div>
+
+      <div class="taskbar-icon">
+        <img
+          src="https://camo.githubusercontent.com/a0d0ba8fa841330130c8662f2aa0ceda2d1d69e492a0c94e4c8a1f40d4658f81/68747470733a2f2f636f64652e76697375616c73747564696f2e636f6d2f6173736574732f757064617465732f315f33352f6c6f676f2d737461626c652e706e67"
+          alt="VS Code" />
+      </div>
+
+      <div class="taskbar-icon">
+        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-store-2022.svg" alt="Microsoft Store">
+      </div>
+    </div>
+
+    <div class="taskbar-right">
+      <img src="images/icones-barra.png" alt="Ícones" />
+      <div class="time-date">
+        <span>11:11</span>
+        <span>11/01/2025</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

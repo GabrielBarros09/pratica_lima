@@ -2,9 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Inicializando...</title>
+  <title>Bem-vindo</title>
   <meta http-equiv="refresh" content="5;url=2_welcome.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -12,50 +11,51 @@
       height: 100vh;
       background-color: #000;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
     }
 
-    .loading-container {
+    .container-carregamento {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 25px;
     }
 
-    .rolling-animation {
+    .logo-windows {
       width: 80px;
-      height: 80px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top-color: #0078d7;
-      animation: spin 1s linear infinite;
+      opacity: 0.9;
     }
 
-    @keyframes spin {
+    .animacao-giratoria {
+      width: 60px;
+      height: 60px;
+      border: 2px dotted rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar {
       to { transform: rotate(360deg); }
     }
 
-    .logo {
-      width: 150px;
-      opacity: 0.8;
-    }
-
-    .loading-text {
+    .texto-carregamento {
       color: white;
-      font-family: 'Segoe UI', sans-serif;
-      margin-top: 20px;
-      opacity: 0.8;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: 300;
     }
   </style>
 </head>
-<body class="booting-screen">
-  <div class="loading-conta iner">
-    <img src="images/windows-11.png" alt="Logo Windows 11" class="logo">
-    <div class="rolling-animation"></div>
-    <p class="loading-text">Inicializando...</p>
+<body>
+  <div class="container-carregamento">
+    <img src="images/windows-11.png" alt="Windows 11" class="logo-windows">
+    <div class="animacao-giratoria"></div>
+    <p class="texto-carregamento">Bem-vindo</p>
   </div>
 </body>
 </html>

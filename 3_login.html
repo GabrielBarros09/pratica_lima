@@ -1,144 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Login - Windows 11</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <title>Tela de Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: url('images/windows11-wallpaper.jpg') no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
-    }
-    
-    /* Efeito de desfoque no plano de fundo */
-    .blur-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
       height: 100%;
-      background: url('images/windows11-wallpaper.jpg') no-repeat center center fixed;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-image: url('images/windows11-wallpaper.jpg');
       background-size: cover;
-      filter: blur(10px);
-      transform: scale(1.05);
-      z-index: -1;
-    }
-    
-    /* Container de login no estilo Windows 11 */
-    .login-container {
-      width: 380px;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.13);
-      border-radius: 8px;
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      text-align: center;
-    }
-    
-    /* Avatar do usuário */
-    .user-avatar {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 25px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      background-position: center;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
-      font-size: 40px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
     }
-    
-    /* Nome do usuário */
-    .user-name {
+
+    .login-container {
+      text-align: center;
       color: white;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 30px;
+      z-index: 1;
     }
-    
-    /* Campo de senha */
-    .password-field {
-      width: 100%;
-      padding: 15px 20px;
+
+    .user-icon {
+      font-size: 60px;
       background: rgba(255, 255, 255, 0.1);
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 1rem;
-      outline: none;
-      margin-bottom: 20px;
-      transition: all 0.3s;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
     }
-    
-    .password-field:focus {
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.5);
-    }
-    
-    .password-field::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    
-    /* Botão de entrar */
-    .login-button {
-      width: 100%;
-      padding: 15px;
-      background: rgba(0, 120, 215, 0.8);
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 1rem;
+
+    .username {
+      font-size: 1.8rem;
       font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .btn-signin {
+      padding: 10px 25px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
-    
-    .login-button:hover {
-      background: rgba(0, 120, 215, 1);
+
+    .btn-signin:hover {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
     }
-    
-    /* Dica visual */
-    .hint-text {
-      color: rgba(255, 255, 255, 0.7);
-      margin-top: 20px;
-      font-size: 0.9rem;
+
+    .rodape-direita {
+      position: absolute;
+      bottom: 25px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1;
+    }
+
+    .icone, .icone-bateria {
+      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 4px;
+      background: transparent;
+      transition: box-shadow 0.2s ease, background-color 0.2s ease;
+      filter: brightness(0) invert(1);
+    }
+
+    .icone:hover, .icone-bateria:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+    }
+
+    .icone img {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Escurecimento + desfoque */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 0;
     }
   </style>
 </head>
 <body>
-  <!-- Efeito de desfoque no plano de fundo -->
-  <div class="blur-overlay"></div>
-  
-  <!-- Container de login -->
   <div class="login-container">
-    <div class="user-avatar">
+    <div class="user-icon">
       <i class="fas fa-user"></i>
     </div>
-    
-    <div class="user-name">Usuário</div>
-    
-    <input type="password" class="password-field" placeholder="Senha">
-    
-    <button class="login-button">Entrar</button>
-    
-    <div class="hint-text">
-      <i class="fas fa-arrow-right"></i> Pressione Enter para continuar
+    <div class="username">Aluno</div>
+    <button class="btn-signin">Entrar</button>
+  </div>
+
+  <div class="rodape-direita">
+    <div class="icone">
+      <img src="images/sinal-wi-fi.png" alt="Wi-Fi" />
+    </div>
+    <div class="icone-bateria">
+      <i class="fas fa-battery-three-quarters" title="Bateria"></i>
     </div>
   </div>
 </body>
